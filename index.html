@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <div class="calc-container">
+        <div class="products calc-block-container">
+            <span class="block-title">Выберите продукты</span>
+            <div class="products-wrapper">
+                <div class="product">
+                    <div class="product-wrapper">
+                        <input type="checkbox" id="recruiting" name="recruiting" class="calc-value">
+                        <div class="product-label">
+                            <div class="label-container">
+                                <label for="reacruiting">Подбор</label>
+                                <div class="custom-label">Фиксированная цена</div>
+                            </div>
+                            <span class="product-description">Гарантирует
+                                компании своевременный подбор персонала</span>
+                        </div>
+                        <div class="product-price-wrapper">
+                            <span id="recruiting-price" class="product-price">120$</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-wrapper">
+                        <input type="checkbox" id="development" name="development" class="calc-value">
+                        <div class="product-label">
+                            <div class="label-container">
+                                <label for="reacruiting">Развитие</label>
+                            </div>
+                            <span class="product-description">Гарантирует
+                                компании своевременный подбор персонала</span>
+                        </div>
+                        <div class="product-price-wrapper">
+                            <span id="development-price" class="product-price">5$</span>
+                            <span class="product-price-description">за
+                                пользователя</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product">
+                    <div class="product-wrapper">
+                        <input type="checkbox" id="assessment" name="assessment" class="calc-value">
+                        <div class="product-label">
+                            <div class="label-container">
+                                <label for="reacruiting">Оценка</label>
+                            </div>
+                            <span class="product-description">Гарантирует
+                                компании своевременный подбор персонала</span>
+                        </div>
+                        <div class="product-price-wrapper">
+                            <span id="assessment-price" class="product-price">3$</span>
+                            <span class="product-price-description">за
+                                пользователя</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <div class="product-wrapper">
+                        <input type="checkbox" id="efficiency" name="efficiency" class="calc-value">
+                        <div class="product-label">
+                            <div class="label-container">
+                                <label for="reacruiting">Эффективность</label>
+                            </div>
+                            <span class="product-description">Гарантирует
+                                компании своевременный подбор персонала</span>
+                        </div>
+                        <div class="product-price-wrapper">
+                            <span id="efficiency-price" class="product-price">4$</span>
+                            <span class="product-price-description">за
+                                пользователя</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="result calc-block-container">
+            <span class="block-title">Количество сотрудников</span>
+            <div class="result-wrapper">
+                <div class="employees-amount-select-wrapper">
+                    <div class="employees-amount-select">0-100</div>
+                    <div class="employees-amount-options hidden">
+                        <div range="0" class="employees-amount-option
+                                selected-option">0-100</div>
+                        <div range="1" class="employees-amount-option">101-300</div>
+                        <div range="2" class="employees-amount-option">301-500</div>
+                        <div range="3" class="employees-amount-option">500 и
+                            более</div>
+                    </div>
+                </div>
+
+                <div class="duration-container">
+                    <span class="duration-description">Ваша цена за</span>
+                    <div class="duration-select">
+                        <span class="switcher">
+                            <input type="checkbox" id="duration-switcher" checked>
+                            <label for="switcher"></label>
+                            <div class="duration-label">20%</div>
+                        </span>
+                    </div>
+                    <span class="discount-description">При оплате за год
+                        скидка 20%</span>
+                </div>
+                <div id="result-price" class="result-price">0$</div>
+                <div id="open-modal-button">Отправить</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="form-modal" class="modal">
+        <div id="form-modal-content" class="modal-content">
+            <span class="close">&times;</span>
+            <div class="block-title-modal">Ваши данные</div>
+            <div class="modal-input-field">
+                <label for="user-name">Имя</label>
+                <input type="text" name="user-name" id="user-name" placeholder="Введите имя">
+            </div>
+            <div class="modal-input-field">
+                <label for="company-name">Компания</label>
+                <input type="text" name="company-name" id="company-name" placeholder="Введите название компании">
+            </div>
+            <div class="modal-input-field">
+                <label for="user-email">Email</label>
+                <input type="text" name="user-email" id="user-email" placeholder="Введите рабочую почту">
+            </div>
+            <div class="modal-input-field">
+                <label for="user-phone">Телефон</label>
+                <input type="text" name="user-phone" id="user-phone" placeholder="Введите номер телефона">
+            </div>
+            <div class="modal-input-field agreement-field">
+                <input type="checkbox" name="personal-data" id="personal-data">
+                <label for="personal-data">Нажимая на кнопку "Отправить", я даю согласие на обработку персональных
+                    данных и соглашаюсь c <a href="https://talentconstructor.com/policy/">Политикой
+                        конфиденциальности</a></label>
+            </div>
+            <div class="modal-button-container">
+                <div class="modal-button cancel-button">Отмена</div>
+                <div class="modal-button send-button disabled">Отправить</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'
+        data-action='submit'>Submit</button>
+
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+        }
+
+        div {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .calc-container {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 2px 2px 15px 2px rgba(34, 60, 80, 0.2);
+        }
+
+        .calc-block-container {
+            width: 50%;
+            padding: 40px 44px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .result {
+            background-color: #f7f8fa;
+        }
+
+        .block-title {
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: 600;
+            margin-bottom: 35px;
+            text-align: center;
+            color: #53607a;
+        }
+
+        .products-wrapper {
+            width: 100%;
+        }
+
+        .product {
+            display: flex;
+            padding: 34px 24px;
+            border-bottom: 1px solid #d7dae0;
+        }
+
+        .product:last-of-type {
+            border-bottom: none;
+        }
+
+        .product-label {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-left: 24px;
+            width: 100%;
+        }
+
+        .label-container>label {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 2%;
+            text-transform: uppercase;
+            color: #061533;
+        }
+
+        .product-wrapper {
+            display: flex;
+            width: 100%;
+        }
+
+        .product-wrapper>input {
+            align-self: flex-start;
+            flex-shrink: 0;
+            border-radius: 4px;
+            height: 32px;
+            width: 32px;
+        }
+
+        .label-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+
+        .custom-label {
+            background-color: #8fdd6a;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 24px;
+            letter-spacing: 1.5%;
+            color: #1a2947;
+            border-radius: 4px;
+            max-width: 140px;
+            padding: 0 8px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            color: #243352;
+        }
+
+        .product-price-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            width: max-content;
+            margin-left: 8px;
+        }
+
+        .product-price {
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 48px;
+            letter-spacing: -0.02em;
+            color: #53607a;
+        }
+
+        .product-price-description {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            color: #53607a;
+            width: max-content;
+        }
+
+        .result-wrapper {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: space-between;
+        }
+
+        .duration-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .duration-description {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 48px;
+            color: #53607a;
+        }
+
+        .discount-description {
+            font-size: 14px;
+            line-height: 20px;
+            color: #53607a;
+            align-self: flex-start;
+        }
+
+        .result-price {
+            font-weight: 700;
+            font-size: 64px;
+            line-height: 48px;
+            letter-spacing: -0.02em;
+            color: #53607a;
+            text-align: center;
+        }
+
+        #open-modal-button {
+            width: 240px;
+            background: #2572b4;
+            border-radius: 100px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 64px;
+            letter-spacing: 0.03em;
+            color: #ffffff;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        /* ******EMPLOYEES AMOUNT SELECT START****** */
+
+        .employees-amount-select-wrapper {
+            position: relative;
+        }
+
+        .employees-amount-select {
+            border: 2px solid #e6e7eb;
+            border-radius: 16px;
+            line-height: 64px;
+            width: 250px;
+            font-size: 32px;
+            color: #243352;
+            text-align-last: center;
+            /* background-color: #fff; */
+        }
+
+        .employees-amount-select::after {
+            content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTEiIHZpZXdCb3g9IjAgMCAxNiAxMSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0xNC4xMTMzIDAuNDQ2Nzc3TDggNi41NjAxMUwxLjg4NjY3IDAuNDQ2Nzc3TDAgMi4zMzM0NEw4IDEwLjMzMzRMMTYgMi4zMzM0NEwxNC4xMTMzIDAuNDQ2Nzc3WiIgZmlsbD0iIzlFQTZCOCIvPg0KPC9zdmc+DQo=');
+            position: absolute;
+            display: inline-block;
+            right: 15px;
+            bottom: 5px;
+            transition: all 0.5s;
+        }
+
+        .rotated.employees-amount-select::after {
+            transform: scaleY(-1) translateY(-10px);
+            transition: all 0.2s;
+        }
+
+        .focused {
+            border-color: #2572b4;
+        }
+
+        .employees-amount-options {
+            position: absolute;
+            margin-top: 4px;
+            margin-bottom: 8px;
+            border: 2px solid #e6e7eb;
+            width: 250px;
+            color: #243352;
+            text-align-last: left;
+            background: #fff;
+            z-index: 4;
+            border-radius: 4px;
+        }
+
+        .employees-amount-option {
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            line-height: 40px;
+            cursor: pointer;
+            margin-left: 12px;
+            margin-right: 15px;
+
+            flex-grow: 2;
+        }
+
+        .option-element {
+            flex-grow: 2;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .selected-option {
+            color: #2572b4;
+        }
+
+        .selected-option::after {
+            content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxNiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik01LjUwMDExIDkuNDc1MDFMMi4wMjUxMSA2LjAwMDAxTDAuODQ1OTQ3IDcuMTc5MTdMNS41MDAxMSAxMS44MzMzTDE1LjUwMDEgMS44MzMzNEwxNC4zMjA5IDAuNjU0MTc1TDUuNTAwMTEgOS40NzUwMVoiIGZpbGw9IiMyNTcyQjQiLz4NCjwvc3ZnPg0K');
+        }
+
+        .request-price {
+            font-size: 24px;
+        }
+
+        .not-visible {
+            visibility: hidden;
+        }
+
+        /* ******EMPLOYEES AMOUNT SELECT END****** */
+
+        /* ******SWITCHER START****** */
+
+        .duration-select {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .duration-select span.switcher {
+            position: relative;
+            width: 240px;
+            height: 48px;
+            border-radius: 100px;
+        }
+
+        .duration-select span.switcher .duration-label {
+            position: absolute;
+            width: 48px;
+            height: 32px;
+            background: #f8c66d;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 32px;
+            text-align: center;
+            top: -10px;
+            right: -10px;
+            z-index: 3;
+        }
+
+        .duration-select span.switcher input {
+            appearance: none;
+            position: relative;
+            width: 240px;
+            height: 48px;
+            border-radius: 100px;
+            background-color: #e6e7eb;
+            outline: none;
+            margin: 0;
+        }
+
+        .duration-select span.switcher input:before,
+        body span.switcher input:after {
+            z-index: 2;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .duration-select span.switcher input:before {
+            content: "Месяц";
+            left: 33px;
+        }
+
+        .duration-select span.switcher input:after {
+            content: "Год";
+            right: 43px;
+        }
+
+        .duration-select span.switcher label {
+            z-index: 1;
+            position: absolute;
+            top: 4px;
+            bottom: 4px;
+            border-radius: 20px;
+        }
+
+        .duration-select span.switcher.switcher input {
+            transition: 0.25s -0.1s;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 24px;
+        }
+
+        .duration-select span.switcher input:checked {
+            background-color: #e6e7eb;
+        }
+
+        .duration-select span.switcher input:checked:before {
+            color: #ea8810;
+            transition: color 0.5s 0.2s;
+            font-weight: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .duration-select span.switcher input:checked:after {
+            color: #3d4b66;
+            transition: color 0.5s;
+        }
+
+        .duration-select span.switcher input:checked+label {
+            left: 4px;
+            right: 120px;
+            background: #fff;
+            transition: left 0.5s, right 0.4s 0.2s;
+        }
+
+        .duration-select span.switcher input:not(:checked) {
+            background: #e6e7eb;
+            transition: background 0.5s -0.1s;
+        }
+
+        .duration-select span.switcher input:not(:checked):before {
+            color: #3d4b66;
+            transition: color 0.5s;
+        }
+
+        .duration-select span.switcher input:not(:checked):after {
+            color: #ea8810;
+            transition: color 0.5s 0.2s;
+        }
+
+        .duration-select span.switcher input:not(:checked)+label {
+            left: 120px;
+            right: 4px;
+            background: #fff;
+            transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+        }
+
+
+        /* ******MODAL START****** */
+        /* The Modal (background) */
+        .modal {
+            /* display: none; */
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            max-width: 528px;
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            border-radius: 16px;
+            padding: 24px 24px;
+        }
+
+        .block-title-modal {
+            font-size: 32px;
+            line-height: 48px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            text-align: left;
+            text-transform: uppercase;
+            color: #53607a;
+        }
+
+        .modal-input-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 16px;
+        }
+
+        .modal-input-field>label {
+            font-size: 14px;
+            line-height: 20px;
+            color: #53607A;
+        }
+
+        .modal-input-field>label::before {
+            content: "*";
+            color: #DB2323;
+            margin-right: 2px;
+        }
+
+        .modal-input-field>input {
+            border-radius: 8px;
+            padding: 12px;
+            border: 1px solid #E6E7EB;
+        }
+
+        .agreement-field {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+
+        .agreement-field>label {
+            margin-left: 2px;
+        }
+
+        .agreement-field>label::before {
+            display: none;
+        }
+
+        .modal-button-container {
+            display: flex;
+            justify-content: end;
+            gap: 16px;
+        }
+
+        .modal-button {
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 28px;
+            text-transform: uppercase;
+            border-radius: 100px;
+            cursor: pointer;
+        }
+
+        .modal-button.cancel-button {
+            padding: 8px 24px;
+        }
+
+        .modal-button.send-button {
+            background-color: #2572B4;
+            color: #FFFFFF;
+            padding: 8px 24px;
+        }
+
+        .modal-button.disabled {
+            opacity: 0.4;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* ******MODAL END****** */
+
+        @keyframes turn-on {
+            0% {
+                left: 100%;
+            }
+
+            100% {
+                left: 0%;
+            }
+        }
+
+        @keyframes turn-off {
+            0% {
+                right: 100%;
+            }
+
+            100% {
+                right: 0%;
+            }
+        }
+
+        /* ******SWITCHER END****** */
+        @media (max-width: 1400px) {
+            .calc-container {
+                max-width: 1100px;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .calc-container {
+                max-width: 950px;
+            }
+
+            .label-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+
+        @media (max-width: 1025px) {
+            .calc-container {
+                max-width: 770px;
+            }
+
+            .calc-container {
+                flex-direction: column;
+            }
+
+            .label-container {
+                flex-direction: row;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .calc-block-container {
+                width: 100%;
+            }
+
+            .result-wrapper {
+                gap: 36px;
+            }
+        }
+
+        @media (max-width: 830px) {
+            .calc-container {
+                max-width: 600px;
+            }
+
+            .label-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+
+            .product {
+                padding: 7px;
+            }
+
+            .product-price-description {
+                max-width: min-content;
+                text-align: right;
+            }
+
+            .product-wrapper>input {
+                flex-shrink: 0.5;
+            }
+
+        }
+
+        @media (max-width: 660px) {
+            .calc-container {
+                max-width: 400px;
+            }
+
+            .product-price {
+                font-size: 30px;
+            }
+
+            .custom-label {
+                text-align: left;
+            }
+
+            .calc-block-container {
+                padding: 15px 17px;
+            }
+
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script defer type="text/javascript" src="index.js"></script>
+
+    <!-- captcha -->
+    <script>
+        const onloadCallback = function () {
+            console.log("reCAPTCHA has loaded!");
+            grecaptcha.reset();
+        };
+    </script>
+    <script async src="https://www.google.com/recaptcha/api.js?onload=onloadCallback"></script>
+    <!-- captcha -->
+
+</body>
+
+</html>
