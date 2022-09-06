@@ -150,15 +150,19 @@
                     данных и соглашаюсь c <a href="https://talentconstructor.com/policy/">Политикой
                         конфиденциальности</a></label>
             </div>
+            <div class="captcha">
+                <form action="?" method="POST">
+                    <div class="g-recaptcha" data-sitekey="6LdA4NghAAAAAMWZcTuTVDB1YNKgTBvJio92Pfpo"></div>
+                    <br/>
+                    <input type="submit" value="Submit">
+                  </form>
+            </div>
             <div class="modal-button-container">
                 <div class="modal-button cancel-button">Отмена</div>
                 <div class="modal-button send-button disabled">Отправить</div>
             </div>
         </div>
     </div>
-
-    <button class="g-recaptcha" data-sitekey="reCAPTCHA_site_key" data-callback='onSubmit'
-        data-action='submit'>Submit</button>
 
     <style>
         body {
@@ -793,13 +797,15 @@
     <script defer type="text/javascript" src="index.js"></script>
 
     <!-- captcha -->
-    <script>
-        const onloadCallback = function () {
-            console.log("reCAPTCHA has loaded!");
-            grecaptcha.reset();
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+        var onloadCallback = function() {
+          console.log("grecaptcha is ready!");
         };
-    </script>
-    <script async src="https://www.google.com/recaptcha/api.js?onload=onloadCallback"></script>
+      </script>
+      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+      async defer>
+  </script>
     <!-- captcha -->
 
 </body>
